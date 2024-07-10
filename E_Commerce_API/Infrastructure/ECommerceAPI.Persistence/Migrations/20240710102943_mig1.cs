@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace ECommerceAPI.Persistance.Migrations
+namespace ECommerceAPI.Persistence.Migrations
 {
     /// <inheritdoc />
     public partial class mig1 : Migration

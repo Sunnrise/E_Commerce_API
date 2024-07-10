@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ECommerceAPI.Persistance.Configurations
+namespace ECommerceAPI.Persistence.Configurations
 {
     static class Configuration
     {

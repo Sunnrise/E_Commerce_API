@@ -1,5 +1,6 @@
 ﻿using ECommerceAPI.Application.Abstractions;
 using ECommerceAPI.Application.Repositories.Products;
+using ECommerceAPI.Domain.Entities;
 using ECommerceAPI.Persistence.Repositories.Products;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -19,7 +20,7 @@ namespace ECommerceAPI.API.Controllers
             _productWriteRepository = productWriteRepository;
         }
         [HttpGet]
-        public async void Get()
+        public async Task Get()
         {
             await _productWriteRepository.AddRangeAsync(new()
 
@@ -30,5 +31,14 @@ namespace ECommerceAPI.API.Controllers
             });
             await _productWriteRepository.SaveAsync();
         }
-    }
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(string id)
+        {
+            Product product = await _productReadRepository.GetByIdAsync(id);
+            return Ok(product);
+        }
+
+
+    } 
 }
+
